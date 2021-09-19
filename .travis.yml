@@ -10,3 +10,14 @@ before_install:
 script:     
     - docker run -e CI=true wakaka7/sample-app npm run test -- --coverage --watchAll=false
 
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "sample-docker-react2"
+    env: "sampledockerreact2-env"
+    bucket_name: "elasticbeanstalk-us-east-2-810263644090"
+    bucket_path: "EBApptest"
+    on:
+        branch: main
+    access_key_id: "$AWS_ACCESS_KEY"
+    secret_access_key: "$AWS_SECRET_KEY"
