@@ -27,3 +27,4 @@ COPY --from=0 /app/build /usr/share/nginx/html
 # That's where our app would run from in aws
 
 # No need to specify a command to start nginx as it gets started by default when a container with the image starts
+# modification
